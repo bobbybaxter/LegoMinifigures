@@ -40,14 +40,22 @@ namespace Legos
             //}
 
             var torso = new YetiTorso();
+            var legs = new ZombieLegs();
             //torso.Fight();
             //torso.Flex();
 
-            var minifigure = new Minifigure(head, torso);
-            minifigure.Battle();
+            var yodaYetiZombie = new Minifigure(head, torso, legs);
+            yodaYetiZombie.Battle();
 
             //minifigure.Torso = torso;
             //minifigure.Torso.Fight();
+
+            var fatHead = new FatHead();
+            var pirateTorso = new PirateTorso(HandType.Hook);
+            var centaurLegs = new CentaurLegs();
+
+            var fatHeadedCentaurPirate = new Minifigure(fatHead, pirateTorso, centaurLegs);
+            fatHeadedCentaurPirate.Battle();
         }
     }
 }

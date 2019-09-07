@@ -4,21 +4,28 @@ namespace Legos.Minifigures
 {
     class Minifigure
     {
-        public Head Head { get; set; }
+        readonly Head _head;
+        readonly Torso _torso;
+        readonly Legs _legs;
 
-        public Torso Torso { get; set; }
+        // Head Head { get; } // not setable, so the user can't change to null or something and cause an error
 
-        public Minifigure(Head head, Torso torso) // instantiates the minifigure and requires the input of a head and torso
+        // Torso Torso { get; }
+
+        public Minifigure(Head head, Torso torso, Legs legs) // instantiates the minifigure and requires the input of a head and torso
         {
-            Head = head;
-            Torso = torso;
+            _head = head;
+            _torso = torso;
+            _legs = legs;
         }
 
         public void Battle()
         {
-            Head.Talk();
-            Torso.Flex();
-            Torso.Fight();
+            _legs.Walk();
+            _head.Talk();
+            _torso.Flex();
+            _torso.Fight();
+            _legs.Kick();
         }
     }
 }
